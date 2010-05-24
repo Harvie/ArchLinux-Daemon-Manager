@@ -8,7 +8,7 @@ pkgrel=1
 pkgdesc="ArchLinux Daemon Manager (Shell + Gnome GTK+ GUI) - Gives you control over services in rc.d and settings in rc.conf"
 arch=('any')
 license=('GPL')
-url="http://aur.archlinux.org/packages.php?ID=29606"
+url="http://github.com/Harvie/ArchLinux-Daemon-Manager"
 depends=('bash' 'gtk2-perl' 'gksu' 'sed')
 source=('aldm' 'aldm-gui' 'aldm.ui')
 md5sums=('0c16113ad13f4e79c9b76ec22cf97206'
