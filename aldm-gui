@@ -32,10 +32,13 @@ $builder = undef;
 	my $column = Gtk2::TreeViewColumn->new_with_attributes('Daemon', Gtk2::CellRendererText->new, text => 0);
 	$widgets{'treeview1'}->append_column($column);
 
-	$column = Gtk2::TreeViewColumn->new_with_attributes('Running', Gtk2::CellRendererText->new, text => 1);
+	$column = Gtk2::TreeViewColumn->new_with_attributes('?', Gtk2::CellRendererText->new, text => 1);
 	$widgets{'treeview1'}->append_column($column);
 
-	$column = Gtk2::TreeViewColumn->new_with_attributes('WhatIs', Gtk2::CellRendererText->new, text => 2);
+	$column = Gtk2::TreeViewColumn->new_with_attributes('Running', Gtk2::CellRendererText->new, text => 2);
+	$widgets{'treeview1'}->append_column($column);
+
+	$column = Gtk2::TreeViewColumn->new_with_attributes('WhatIs', Gtk2::CellRendererText->new, text => 3);
 	$widgets{'treeview1'}->append_column($column);
 
 refresh_view();
@@ -77,13 +80,15 @@ sub refresh_view
 		#my $iter = $widgets{'liststore1'}->append();
 		#$widgets{'liststore1'}->set($iter, 0 => "$_", 1=> "$run", 2 => "$w");
 
+		my $state = $_;
+		$state =~ s/[a-zA-Z0-9 \-]*//g;
+
 		my $serv = $_;
 		$serv =~ s/^(!|@)//g;
-
 		if(!defined($iterators{$serv})) {
 			$iterators{$serv} = $widgets{'liststore1'}->append();
 		}
-		$widgets{'liststore1'}->set($iterators{$serv}, 0 => "$_", 1=> "$run", 2 => "$w");
+		$widgets{'liststore1'}->set($iterators{$serv}, 0 => "$serv", 1=> "$state", 2=> "$run", 3 => "$w");
 	}
 	close($daemon_list);
 }

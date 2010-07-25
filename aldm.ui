@@ -6,6 +6,8 @@
     <columns>
       <!-- column-name daemon -->
       <column type="gchararray"/>
+      <!-- column-name state -->
+      <column type="gchararray"/>
       <!-- column-name running -->
       <column type="gchararray"/>
       <!-- column-name whatis -->

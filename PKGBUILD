@@ -3,7 +3,7 @@
 # You can also contact me on http://blog.harvie.cz/
 
 pkgname=aldm
-pkgver=0.4
+pkgver=0.5
 pkgrel=1
 pkgdesc="ArchLinux Daemon Manager (Shell + Gnome GTK+ GUI) - Gives you control over services in rc.d and settings in rc.conf"
 arch=('any')
@@ -12,8 +12,8 @@ url="http://github.com/Harvie/ArchLinux-Daemon-Manager"
 depends=('bash' 'gtk2-perl' 'gksu' 'sed')
 source=('aldm' 'aldm-gui' 'aldm.ui')
 md5sums=('0c16113ad13f4e79c9b76ec22cf97206'
-         '6a73ae72411eda426e9f97cfa1942fdd'
-         'dd2f8a1d52200756edfb34afa5a574af')
+         '4ee212dc72229a8f92c53bafa7d50084'
+         '0cd99b332e56846039ac562d6c59abb5')
 
 build() {
 	mkdir -p ${pkgdir}/usr/bin
